@@ -21,7 +21,16 @@ public class Evaluator {
 	}
 	
 	public static void main(String args[]) {
+		Auction auction = new Auction();
+		auction.propose(new Snack("Jonh", 300d));
+		auction.propose(new Snack("Mary", 200d));
+		auction.propose(new Snack("Kelly", 500d));
 		
+		Evaluator evaluator = new Evaluator();
+		evaluator.evaluate(auction);
+		Snack winner = evaluator.getBiggestSnack();
+		
+		System.out.println(winner.getSnackValue());
 	}
 
 }
